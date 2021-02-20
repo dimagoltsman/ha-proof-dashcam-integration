@@ -1,0 +1,9 @@
+{
+    "domain": "proof",
+    "name": "Proof",
+    "documentation": "https://github.com/dimagoltsman/ha-proof-dashcam-integration",
+    "dependencies": [],
+    "codeowners": [],
+    "requirements": ["xml2dict==0.2.2"],
+    "config_flow": false
+}
