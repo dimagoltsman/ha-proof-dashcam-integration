@@ -4,7 +4,7 @@
     "documentation": "https://github.com/dimagoltsman/ha-proof-dashcam-integration",
     "dependencies": [],
     "codeowners": [],
-    "requirements": ["xml2dict==0.2.2"],
+    "requirements": ["xml2dict>=0.2.2"],
     "version": "0.1.1"
     "config_flow": false
 }
