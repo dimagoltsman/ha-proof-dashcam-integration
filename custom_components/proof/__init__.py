@@ -81,7 +81,7 @@ def setup(hass, config):
     
         
         hass.services.register(DOMAIN, 'download_pic', handle_pic)
-        hass.services.call(DOMAIN, 'download_pic', {'entity_id': 'audi'})
+        hass.services.call(DOMAIN, 'download_pic', {'entity_id': ent_id})
         
     component.add_entities(entities)
     
@@ -97,6 +97,7 @@ def get_proof_data(access_token):
     try:
       return dic['items'][0]
     except:
+      _LOGGER.error("exception getting proof data: " + str(response))
       return None
 
 class Proof(Entity):
@@ -134,7 +135,12 @@ class Proof(Entity):
         self._updated_at = time.mktime(time.gmtime())
         data = get_proof_data(self._access_token)
         if data == None:
-            login(self._username, self._password)
+            _LOGGER.error('Going yo login again....')
+            
+            res = login(self._username, self._password)
+            self._access_token = res['access_token']
+            expires_in = res['expires_in']
+            self._expiration_time = time.mktime(time.gmtime()) + expires_in
             self.update()
         else:
             self._proof_data = data
