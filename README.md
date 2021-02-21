@@ -1,7 +1,5 @@
-# STILL IN DEV!
-
 # ha-proof-dashcam-integration
-HACS integration to proof.co.il dashcam
+HACS integration to www.proof.co.il dashcam
 
 ![Proof](https://github.com/dimagoltsman/ha-proof-dashcam-integration/blob/main/screenshot.png?raw=true)
 
@@ -34,7 +32,7 @@ default_zoom: 17
 title: Audi A5
 ```
 
-Picture from camera with refresh button: (make sure u also have my refreshable-picture-card for best results)
+Picture from camera with refresh button: (make sure u also have my [refreshable-picture-card for best results](https://github.com/dimagoltsman/refreshable-picture-card))
 ```yaml
 cards:
   - entity_picture: proof.audi
