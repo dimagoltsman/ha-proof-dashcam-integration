@@ -1,0 +1,6 @@
+download_pic:
+  description: initiates a call to get current picture from camera.
+  fields:
+    entity_id:
+      description: id of the camera under the proof configuration
+      example: "audi"
