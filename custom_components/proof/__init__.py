@@ -62,9 +62,9 @@ def setup(hass, config):
         def handle_pic(call):
             if ent_id == call.data['entity_id']:
                 # _LOGGER.error(name)
-                url = TAKE_PIC_URL.format(access_token)
+                url = TAKE_PIC_URL.format(proof_obj._access_token)
                 post(url, 'did={}&cmd=2&vib=false&picsize=640x480'.format(proof_data['status']['did']))
-                get_pic_url = GET_PIC_URL.format(access_token)
+                get_pic_url = GET_PIC_URL.format(proof_obj._access_token)
                 pic_url = ''
                 i = 1
                 while i < 10:
@@ -135,7 +135,7 @@ class Proof(Entity):
         self._updated_at = time.mktime(time.gmtime())
         data = get_proof_data(self._access_token)
         if data == None:
-            _LOGGER.error('Going yo login again....')
+            _LOGGER.error('Going to login again....')
             
             res = login(self._username, self._password)
             self._access_token = res['access_token']
