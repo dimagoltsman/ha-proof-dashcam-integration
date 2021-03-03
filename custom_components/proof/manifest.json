@@ -1,6 +1,6 @@
 {
     "domain": "proof",
-    "name": "Proof",
+    "name": "ha-proof-dashcam-integration",
     "documentation": "https://github.com/dimagoltsman/ha-proof-dashcam-integration",
     "dependencies": [],
     "codeowners": ["@dimagoltsman"],
