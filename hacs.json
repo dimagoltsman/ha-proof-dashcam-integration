@@ -1,6 +1,6 @@
 {
   "name": "Proof Dashcam Integration",
   "iot_class" : ["Assumed State"],
+  "country": "IL",
   "render_readme" : true
-
 }
